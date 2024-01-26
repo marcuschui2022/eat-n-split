@@ -62,7 +62,7 @@ export default function App() {
         <FriendsList
           friends={friends}
           selectedFriend={selectedFriend}
-          onSelectoin={handleSelection}
+          onSelection={handleSelection}
         />
         {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
         <Button className="button" onClick={handleShowAddFriend}>
@@ -80,14 +80,14 @@ export default function App() {
   );
 }
 
-function FriendsList({ friends, onSelectoin, selectedFriend }) {
+function FriendsList({ friends, onSelection, selectedFriend }) {
   return (
     <ul>
       {friends.map((friend) => (
         <Friend
           friend={friend}
           key={friend.id}
-          onSelection={onSelectoin}
+          onSelection={onSelection}
           selectedFriend={selectedFriend}
         />
       ))}
